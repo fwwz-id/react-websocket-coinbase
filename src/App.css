@@ -1,0 +1,120 @@
+#root {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem 2rem 0;
+	text-align: center;
+
+	--white: #e0e0e0;
+	--primary: #12a4dd;
+	--info: #0f862d;
+	--error: #971010;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: var(--white);
+}
+
+.title {
+	text-decoration: underline;
+	letter-spacing: 0.05rem;
+	margin-bottom: 3rem;
+}
+
+.cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: center;
+}
+
+.card {
+	background-color: var(--white);
+	border-radius: 5px;
+	padding: 1rem;
+	width: 15rem;
+	transition: 0.3s;
+	position: relative;
+	overflow: hidden;
+}
+
+.card:hover {
+	transform: scale(0.9) translateY(-10px);
+}
+
+.card-head {
+	display: flex;
+	justify-content: space-between;
+}
+
+.card-head-id {
+	cursor: pointer;
+	font-weight: bold;
+	color: var(--primary);
+}
+
+.card-contents .card-content {
+	display: flex;
+	gap: 0.5rem;
+}
+
+.card-contents .card-content.content-1 {
+	justify-content: center;
+}
+
+.card-contents .card-content.content-1 {
+	justify-content: center;
+}
+
+.card-contents .card-content.content-2 {
+	justify-content: space-between;
+}
+
+.card-contents .label {
+	font-weight: bold;
+}
+
+.value-bid {
+	color: var(--info);
+}
+
+.value-ask {
+	color: var(--error);
+}
+
+.card .card-layer {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	inset: 0;
+	display: grid;
+	place-items: center;
+	background-color: var(--primary);
+	transition: 0.3s 0.1s ease transform;
+	transform: translateY(-100%);
+}
+
+.card-layer .toggle-subscription {
+	background-color: var(--white);
+	padding: 0.5rem 1rem;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 0.3s 0.4s;
+	opacity: 0;
+}
+
+.card:hover .card-layer {
+	transform: translateY(0%);
+	transform-origin: bottom;
+}
+.card:hover .card-layer .toggle-subscription {
+	opacity: 1;
+}
+
+.card-layer .toggle-subscription:hover .value {
+	color: var(--primary);
+}
